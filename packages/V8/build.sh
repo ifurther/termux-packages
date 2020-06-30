@@ -8,14 +8,17 @@ TERMUX_PKG_VERSION=8.5.197
 TERMUX_PKG_BUILD_IN_SRC=true
 
 termux_step_extract_package() {
+	termux_setup_depot_tools
 	if [ ! -d $TERMUX_PKG_SRCDIR ]; then
 
 		rm -Rf $TERMUX_PKG_SRCDIR
 		mkdir -p $TERMUX_PKG_SRCDIR
-		git clone --depth 1 \
-			--branch $TERMUX_PKG_VERSION \
-			https://github.com/v8/v8.git \
+		gclient config --unmanaged https://chromium.googlesource.com/v8/v8.git
+		git clone https://github.com/v8/v8.git \
 			$TERMUX_PKG_SRCDIR
+		cd $TERMUX_PKG_SRCDIR
+		local vserioncommit=$(git rev-parse refs/tags/$TERMUX_PKG_VERSION)
+		gclient sync --revision v8@$vserioncommit
 	fi
 }
 
