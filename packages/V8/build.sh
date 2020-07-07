@@ -9,6 +9,11 @@ TERMUX_PKG_BUILD_IN_SRC=true
 
 termux_step_extract_package() {
 	termux_setup_depot_tools
+	# Provide 'python' as Python v2.
+	mkdir fakebin
+	(set -e; cd fakebin && ln -sf "$(command -v python2)" python)
+	PATH="$(realpath ./fakebin):$PATH"
+	export PATH
 	if [ ! -d $TERMUX_PKG_SRCDIR ]; then
 
 		rm -Rf $TERMUX_PKG_SRCDIR
