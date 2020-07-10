@@ -68,7 +68,7 @@ termux_step_make() {
 	fi
 
 	rm -f ./out/*/args.gn
-	ninja -C out.gn/$DEST_CPU.release d8
+	ninja -C out.gn/$DEST_CPU.releas
 }
 
 termux_step_make_install() {
