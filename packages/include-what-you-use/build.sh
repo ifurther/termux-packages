@@ -1,0 +1,9 @@
+TERMUX_PKG_HOMEPAGE=https://github.com/include-what-you-use/include-what-you-use
+TERMUX_PKG_DESCRIPTION="For every symbol (type, function, variable, or macro) that you use in file."
+TERMUX_PKG_LICENSE="custom"
+TERMUX_PKG_LICENSE_FILE="LICENSE.TXT"
+TERMUX_PKG_VERSION=0.14
+TERMUX_PKG_SRCURL=https://github.com/include-what-you-use/include-what-you-use/archive/$TERMUX_PKG_VERSION.tar.gz
+TERMUX_PKG_SHA256=656431b5c66b34ed403ce94c2b2347d3af16e135edc6bc02157a8dfb7d641025
+TERMUX_PKG_DEPENDS="libllvm, libllvm-static"
+#TERMUX_PKG_BUILD_IN_SRC=true
