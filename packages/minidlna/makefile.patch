@@ -1,18 +1,22 @@
 --- a/Makefile
 +++ /Makefile
-@@ -13,9 +13,9 @@
+@@ -13,12 +13,12 @@
  #CFLAGS = -Wall -O -D_GNU_SOURCE -g -DDEBUG
  #CFLAGS = -Wall -g -Os -D_GNU_SOURCE
  CFLAGS = -Wall -g -O3 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 \
 -	 -I/usr/include/ffmpeg \
 -	 -I/usr/include/libavutil -I/usr/include/libavcodec -I/usr/include/libavformat \
 -	 -I/usr/include/ffmpeg/libavutil -I/usr/include/ffmpeg/libavcodec -I/usr/include/ffmpeg/libavformat
-+	 -I@TERMUX_PREFIX@/include/ffmpeg \
-+	 -I@TERMUX_PREFIX@/include/libavutil -I@TERMUX_PREFIX@/include/libavcodec -I@TERMUX_PREFIX@/include/libavformat \
-+	 -I@TERMUX_PREFIX@/include/ffmpeg/libavutil -I/include/ffmpeg/libavcodec -I@TERMUX_PREFIX@/include/ffmpeg/libavformat
++	 -I@TERMUX_PREFIX@/ffmpeg -I@TERMUX_PREFIX@/include/ -I. \
++	 -I@TERMUX_PREFIX@/libavutil -I@TERMUX_PREFIX@/libavcodec -I@TERMUX_PREFIX@/libavformat \
++	 -I@TERMUX_PREFIX@/ffmpeg/libavutil -I@TERMUX_PREFIX@/ffmpeg/libavcodec -I@TERMUX_PREFIX@/ffmpeg/libavformat
  #STATIC_LINKING: CFLAGS += -DSTATIC
  #STATIC_LINKING: LDFLAGS = -static
- CC = gcc
+-CC = gcc
++CC ?= gcc
+ RM = rm -f
+ INSTALL = install
+ 
 @@ -37,7 +37,7 @@
  
  ALLOBJS = $(BASEOBJS) $(LNXOBJS)
