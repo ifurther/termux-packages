@@ -123,6 +123,8 @@ PACKAGES+=" python-yaml"
 # Java.
 PACKAGES+=" openjdk-8-jdk"
 
+# Needed by dgsh
+PACKAGES+=" rsync"
 # Needed by packages in unstable repository.
 PACKAGES+=" docbook-to-man"
 PACKAGES+=" docbook-utils"
