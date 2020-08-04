@@ -1,0 +1,11 @@
+--- a/core-tools/src/dgsh-tee.c.org	2020-08-04 17:13:00.761657044 +0000
++++ b/core-tools/src/dgsh-tee.c	2020-08-04 17:48:26.636297446 +0000
+@@ -438,7 +438,7 @@
+ {
+ #ifdef FALLOC_FL_PUNCH_HOLE
+ 	static bool warned = false;
+-
++	int tmp_fd;
+ 	if (fallocate(tmp_fd, FALLOC_FL_PUNCH_HOLE, pool * buffer_size, buffer_size) < 0 &&
+ 	    !warned) {
+ 		warn("Failed to free temporary buffer space");
