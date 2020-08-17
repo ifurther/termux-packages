@@ -14,8 +14,10 @@ termux_step_make() {
 	export GOPATH="${TERMUX_PKG_BUILDDIR}"
 	mkdir -p "${GOPATH}/src/github.com/gravitational"
 	cp -a "${TERMUX_PKG_SRCDIR}" "${GOPATH}/src/github.com/gravitational/teleconsole"
+	cd $GOPATH/src/github.com/gravitational
+	git clone --depth 1 --branch v2.0.0-alpha.4 https://github.com/gravitational/teleport.git
 	cd "${GOPATH}/src/github.com/gravitational/teleconsole"
-	go get -d -v
+	go get  -v .
 	make
 }
 
