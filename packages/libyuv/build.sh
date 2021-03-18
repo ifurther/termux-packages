@@ -25,3 +25,7 @@ termux_step_get_source() {
 	echo "target_os = ['android']" >> .gclient
 	gclient sync -D --force --reset
 }
+
+termux_step_configure() {
+	termux_setup_cmake
+}
