@@ -8,7 +8,7 @@ TERMUX_PKG_SRCURL=https://github.com/meganz/MEGAcmd.git
 TERMUX_PKG_GIT_BRANCH=${TERMUX_PKG_VERSION}_Linux
 TERMUX_PKG_DEPENDS="freeimage, c-ares, readline, cryptopp, curl, openssl, libcrypt, libsodium, libsqlite, libuv, pcre, zlib"
 TERMUX_PKG_BUILD_IN_SRC=true
-TERMUX_PKG_EXTRA_CONFIGURE_ARGS="--with-freeimage=no"
+TERMUX_PKG_EXTRA_CONFIGURE_ARGS="--without-freeimage --without-pthread"
 termux_step_pre_configure() {
 	git submodule update --init --recursive
 	./autogen.sh
