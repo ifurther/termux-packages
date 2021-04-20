@@ -12,4 +12,5 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="--without-freeimage --without-pthread"
 termux_step_pre_configure() {
 	git submodule update --init --recursive
 	./autogen.sh
+	sed 's/@LIBTOOL@/$(SHELL)\ \/usr\/bin\/libtool/g' -i Makefile.in
 }
