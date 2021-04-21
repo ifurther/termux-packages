@@ -1,0 +1,43 @@
+--- a/src/decoders/kodak_decoders.cpp
++++ b/src/decoders/kodak_decoders.cpp
+@@ -17,6 +17,7 @@
+  */
+ 
+ #include "../../internal/dcraw_defs.h"
++#include "../../internal/swab.h"
+ 
+ #define radc_token(tree) ((signed char)getbithuff(8, huff + (tree) * 256))
+ 
+--- a/src/decoders/unpack_thumb.cpp
++++ b/src/decoders/unpack_thumb.cpp
+@@ -13,6 +13,7 @@
+  */
+ 
+ #include "../../internal/libraw_cxx_defs.h"
++#include "../../internal/swab.h"
+ 
+ #ifndef NO_JPEG
+ struct jpegErrorManager
+
+--- a/src/utils/read_utils.cpp
++++ b/src/utils/read_utils.cpp
+@@ -17,6 +17,7 @@
+  */
+ 
+ #include "../../internal/dcraw_defs.h"
++#include "../../internal/swab.h"
+ 
+ ushort LibRaw::sget2Rev(uchar *s) // specific to some Canon Makernotes fields,
+                                   // where they have endian in reverse
+
+--- a/src/write/file_write.cpp
++++ b/src/write/file_write.cpp
+@@ -17,6 +17,7 @@
+  */
+ 
+ #include "../../internal/dcraw_defs.h"
++#include "../../internal/swab.h"
+ 
+ int LibRaw::flip_index(int row, int col)
+ {
+
