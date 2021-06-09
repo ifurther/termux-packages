@@ -1,7 +1,7 @@
 TERMUX_PKG_HOMEPAGE=https://www.libsdl.org
 TERMUX_PKG_DESCRIPTION="Simple DirectMedia Layer is a cross-platform development library."
 TERMUX_PKG_LICENSE="zlib"
-TERMUX_PKG_LICENSE_FILE="LICENSE.txt"
+TERMUX_PKG_LICENSE_FILE="COPYING.txt"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=2.0.14
 TERMUX_PKG_SRCURL=https://www.libsdl.org/release/SDL2-${TERMUX_PKG_VERSION}.tar.gz
